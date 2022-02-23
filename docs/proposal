@@ -1,1 +1,7 @@
+Meeting Ideas
+Twitter + IMDB (Watson sentiment analysis)
+We plan to use the Twitter, Watson and IMDB API to create a movie recommendation based on the sentiment of a person’s Twitter feed. For our third party authentication, we plan to use their Twitter log in. Our database will store the emotions gathered from the Watson API alongside the movies correlated to each emotion. We will return a list of the best matching movies for the user to choose from, along with their corresponding IMDB information.
+
+Yelp + Eventbrite (concert and best restaurant nearby)
+We plan to use the Yelp and Eventbrite API to create a list of restaurant recommendations for different concerts. Users will use their Google account for authentication. Our database will store all the possible locations of restaurants within a certain radius of a concert, and will return the highest rated restaurant with the closest proximity to the chosen concert.
 

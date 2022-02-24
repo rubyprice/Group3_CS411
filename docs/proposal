@@ -1,13 +1,19 @@
-Meeting Ideas
-Twitter + IMDB (Watson sentiment analysis)
-We plan to use the Twitter, Watson and IMDB API to create a movie recommendation based on the sentiment of a 
-person’s Twitter feed. For our third party authentication, we plan to use their Twitter log in. Our database 
-will store the emotions gathered from the Watson API alongside the movies correlated to each emotion. We will 
-return a list of the best matching movies for the user to choose from, along with their corresponding IMDB information.
+Proposal 1: Twitter Feed Movie Recommendation
 
-Yelp + Eventbrite (concert and best restaurant nearby)
-We plan to use the Yelp and Eventbrite API to create a list of restaurant recommendations for different concerts. 
-Users will use their Google account for authentication. Our database will store all the possible locations of 
-restaurants within a certain radius of a concert, and will return the highest rated restaurant with the closest 
-proximity to the chosen concert.
+APIs: Twitter, IMDB, Watson
+We plan to use the Twitter, Watson and IMDB API to create a movie recommendation based on the sentiment of a 
+person’s Twitter feed. The movie recommendation should be a genre which match the mood or emotions gathered from a person's feed. 
+For our third party authentication, we plan to use their Twitter log in. Our database will store the emotions gathered from the 
+Watson API alongside the movie genres correlated to each emotion. We will return a list of the best matching movies for the user 
+to choose from, along with their corresponding IMDB information.
+
+Proposal 2: Best Resturant Near Eventbrite Event
+
+APIs: Yelp, Eventbrite
+We plan to use the Yelp and Eventbrite API to create a list of restaurant recommendations for specific events on Eventbrite. The user will be 
+able to select an event they're attending, and get as a result the best restaurants for the event, with teh restaurant rating, proximity,
+and hours of operation being considered. We may also make use of GoogleMaps to gauge the distance between the event and the restaurant.
+Users will use their Google account for authentication through either Yelp or Eventbrite. Our database will store all the possible 
+locations of restaurants within a certain radius of a concert, and will return the highest rated restaurant with the closest proximity 
+to the chosen event.
 

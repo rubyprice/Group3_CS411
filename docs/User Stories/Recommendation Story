@@ -1,0 +1,7 @@
+User Story: As a logged-in user, I want to get a movie recommendation that matches my mood to enhance my movie-watching experience.
+
+Decsription: After the user is logged in following from user login story, their twitter feed is sent to and analyzed by Watson’s API and specific mood is 
+associated with their twitter feed. Right after logging in, the user will see the top 5 movies that match the genre associated with their mood 
+at the time. If the user is not logged in the website will not be able to analyze their twitter feed and hence will not be able to return a 
+list of movies to watch. We are returning movies that are associated with the user’s mood. For example, a user who has a happy twitter feed 
+will receive movies that have a happy genre. This will allow the user to have a better movie watching experience.

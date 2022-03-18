@@ -1,0 +1,4 @@
+Movie Details Story
+
+As a logged-in user, I want to know the genre/synopsis of the movie recommendations I receive in order to see if I would like the movie.
+ - After the user logs in with their Twitter information, the app will provide 5 movie recommendations according to the user’s Twitter sentiment. The user will click on a movie to view its genre, synopsis, and rating. If the user is interested, the user will choose to watch this movie. If the user wants to consider other movies, the user will go back to the recommendation page to view another movie’s details. 

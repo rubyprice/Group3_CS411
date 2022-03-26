@@ -1,0 +1,7 @@
+As a user, I want to be able to see which movies I have previously watched in order to keep track of all the movies I have watched so far.
+
+After a user logs in successfully, the  twitter info is received, and movies based on Watson's sentiment analysis have been watched and/or reviewed,
+the user should be able to access a page that displaysthe movie title, year, and other relevant information sorted by the date it was watched (in descending order). 
+
+If the user tries to login but is unsuccessful, they will be prompted to log in again. If the twitter information is not received, or incorrect 
+data is received, the user should encounter an error message describing the twitter error, and the same goes for the data from the Watson sentiment analysis. 

@@ -1,4 +1,12 @@
-Movie Details Story
+Movie Details Story: 
 
-As a logged-in user, I want to know the genre/synopsis of the movie recommendations I receive in order to see if I would like the movie.
- - After the user logs in with their Twitter information, the app will provide 5 movie recommendations according to the user’s Twitter sentiment. The user will click on a movie to view its genre, synopsis, and rating. If the user is interested, the user will choose to watch this movie. If the user wants to consider other movies, the user will go back to the recommendation page to view another movie’s details. 
+As a logged-in user, I want to know the genre and synopsis of the movie recommendations I receive in order to determine whether I would like to watch the movie.
+ - After the user logs in with their Twitter information (User Login Story), the app will provide 5 movie recommendations according to the user’s Twitter sentiment 
+ (Recommendation Story). The user will click on a movie to view its genre, synopsis, and rating. If the user is interested, the user will choose to watch this movie. 
+ If the user wants to consider other movies, the user will go back to the recommendation page to view another movie’s details.
+ - If there is no information on certain detail(s) of the movie yet (e.g. the movie is a new release), the category that is lacking information will be left blank with 
+ the message “No information available yet”. The details for this category will be added once information can be obtained. 
+ - If there is no internet connection to pull the movie details from our database, we will display a blank screen with the message “Not connected to the internet” to let 
+ the user know they need to establish a connection before we can display the information. 
+ - If the movie details page has been loading for more than 1 minute due to slow connection, the app will return to the recommendation list with the message “Slow 
+ connection”, so the user can try to connect to a faster network or try to view the movie details at another time when their connection may be faster. 

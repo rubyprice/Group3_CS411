@@ -1,18 +1,19 @@
 User Story: 
 
-As a logged-in user, I want to get a movie recommendation that matches my mood to enhance my movie-watching experience.
+As a logged-in user, I want to get a movie recommendations with titles matching the weather of my current location.
 
 Decsription:
 
-After the user is logged in following from user login story, their twitter feed is sent to and analyzed by Watson’s API and specific mood is 
-associated with their twitter feed. Right after logging in, the user will see the top 5 movies that match the genre associated with their mood 
-at the time. If the user is not logged in the website will not be able to analyze their twitter feed and hence will not be able to return a 
-list of movies to watch. We are returning movies that are associated with the user’s mood. For example, a user who has a happy twitter feed 
-will receive movies that have a happy genre. This will allow the user to have a better movie watching experience.
+After the user is logged in, following from user login story, they will be prompted to enter their zip code, which will be stored in our database. Whenver the user 
+opens our app, weather data associated with the zip code will be pulled and our app will return movies with titles containing the words of the specific weather 
+at the moment. Right after logging in, the user will see the top 5 movies that match the weather at the time. If the user is not logged in, the website will not be 
+able to konw their zip code and hence will not be able to return a list of movies to watch. For example, a user who is currently in an area with snow will get a list
+of movies containing the word "snow" in their titles. This will allow the user to find movies with themes that match their environment and have a better movie 
+watching experience.
 
-This is assuming that the user follows the “happy path”. There can be a couple exceptions to this path. The first being more than one emotion being 
-associated with the user’s twitter feed. For example, if the user’s twitter feed is equally happy and sad then we can face this issue by giving the 
-user a few movie recommendations each. In other words, out of the 5 movies, 2 can be happy movies while 3 can be sad, or vice versa. This will allow 
-the user to have a wider range of choices and will result in a better movie watching experience. The next exception could be if the emotion associated 
-with their twitter feed does not match with any movie genre. In that case we can have a pop-up warning message that says “No movies match your current
-mood, but here are some highly rated movies” and after they close the pop-up movies that are rated highly can be listed.
+This is assuming that the user follows the “happy path”. There can be a couple exceptions to this path. The first being more than one type of weather for the zip code. 
+For example, if the weather of a certain zip code is transitioning from rainy to cloudy, then we can resolve this issue by giving the user a few movie recommendations 
+for each type of weather. In other words, out of the 5 movies, 3 can be movies containing the word "rainy" while 2 can contain "cloudy". This will allow 
+the user to have a wider range of choices and will result in a better movie watching experience. The next exception could be if no movies containing words of a certain 
+weather could be found. In that case we can have a pop-up warning message that says “No movies match your current weather, but here are some highly rated movies”.
+After users close the pop-up, movies that are rated highly will be listed.

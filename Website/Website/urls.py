@@ -23,6 +23,9 @@ router.register(r'UserData', views.UserDataView, 'UserData')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    re_path(r'^', views.UserDataAPI),
-    path('api/', include(router.urls))
+    re_path('api/UserData', views.UserDataAPI),
+    re_path('api/SpotifyPlaylists', views.spotify_playlistData),
+    re_path('api/GoogleUserData', views.GoogleUserDataAPI),
+    #re_path('auth/', include('djoser.social.urls')),
+    #path('api/', include(router.urls))
 ]

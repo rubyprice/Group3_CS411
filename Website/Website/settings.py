@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
 from pathlib import Path
+from telnetlib import AUTHENTICATION
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -40,9 +41,14 @@ INSTALLED_APPS = [
     'corsheaders',
     'rest_framework',
     'Reccomendations',
+    # 'social_django',
+    # 'rest_framework_simplejwt',
+    # 'rest_framework_simplejwt.token_blacklist',
+
 ]
 
 MIDDLEWARE = [
+    #'social_django.middleware.SocialAuthExceptionMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -66,6 +72,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                # 'social_django.context_processors.backends',
+                # 'social_django.context_processors.login_redirect'
             ],
         },
     },
@@ -115,6 +123,11 @@ USE_I18N = True
 
 USE_TZ = True
 
+# AUTHENTICATION_BACKENDS = (
+#     'social_core.backends.google.GoogleOAuth2',
+#     'django.contrib.auth.backends.ModelBackend'
+# )
+
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
@@ -129,3 +142,11 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 CORS_ORIGIN_WHITELIST = [
      'http://localhost:3000'
 ]
+
+# SOCIAL_AUTH_GOOGLE_OATH2_KEY = '465862241196-2pnjgo8q0lub0hmva6i0464v1q9bj13i.apps.googleusercontent.com'
+# SOCIAL_AUTH_GOOGLE_OATH2_SECRET = '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'
+# SOCIAL_AUTH_GOOGLE_OATH2_SCOPE = ['https://www.googleapis.com/auth/userinfo.email',
+#                                     'https://www.googleapis.com/auth/userinfo.profile',
+#                                     'openid']
+
+# SOCIAL_AUTH_GOOGLE_OATH2_EXTRA_DATA =['first_name', 'last_name']

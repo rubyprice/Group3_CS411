@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import axios from "axios";
 import ZipcodeForm from "./ZipcodeForm";
 import ScrollableList from "./ScrollableList";
+import MovieScrollableList from "./MovieScrollableList";
 import { Button } from 'react-bootstrap';
 axios.defaults.xsrfHeaderName = "X-CSRFTOKEN";
 axios.defaults.xsrfCookieName = "csrftoken";
@@ -14,12 +15,7 @@ export default class DataEntry extends Component {
         };
       }
     
-    //   routeChange = () => {
-    //     window.location.href = "http://localhost:3000/login";
-    //   }
       
-      
-    
       componentDidMount() {
         this.refreshList();
       }
@@ -61,14 +57,15 @@ export default class DataEntry extends Component {
             return (
         <div id="page1">
         <main className="container">
-            <h1 className="text-black text-center my-4">Show Spotify Playlists To Match the Weather!</h1>
+            <h1 className="text-black text-center my-4">Show Spotify Playlists and Movie Reccomendations To Match the Weather!</h1>
             <div className="row">
             <div className="col-md-6 col-sm-10 mx-auto p-0">
                 <div className="card p-1">
                 <div className="mb-4">
                 </div>
                 <ZipcodeForm/>
-                <ScrollableList/>
+                <p><ScrollableList/>
+                <MovieScrollableList/></p> 
                 <ul className="list-group list-group-flush border-top-0">
                     
                 </ul>

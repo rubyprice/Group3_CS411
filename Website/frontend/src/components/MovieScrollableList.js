@@ -4,11 +4,11 @@ axios.defaults.xsrfHeaderName = "X-CSRFTOKEN";
 axios.defaults.xsrfCookieName = "csrftoken";
 
 
-export default class ScrollableList extends Component {
+export default class MovieScrollableList extends Component {
     constructor(props) {
         super(props);
         this.state = {
-          spotifyData: [],
+          movieData: [],
         };
       }
 
@@ -18,19 +18,19 @@ export default class ScrollableList extends Component {
 
     refreshList2 = () => {
         axios
-        .get("http://localhost:8000/api/SpotifyPlaylists/")
-        .then((res) => this.setState({ spotifyData: res.data }))
+        .get("http://localhost:8000/api/IMDBMovies/")
+        .then((res) => this.setState({ movieData: res.data }))
         .catch((err) => console.log(err));
     };
 
     fillScrollableList = () => {
-        const newItems = this.state.spotifyData;
+        const newItems = this.state.movieData;
         // console.log(this.state);
         return newItems.map((item) => (
         <div>
             <span>
-                <img src={item.playlist_img} alt="IMG NOT FOUND" width={120} length={120}/>
-                <a style={{ fontSize: '70px'}} href={item.external_url_spotify}>{item.playlist_name}</a>
+                <img src={item.image} alt="IMG NOT FOUND" width={120} length={120}/>
+                <p style={{ fontSize: '55px'}}> <strong>{item.title}</strong>({item.description})</p>
             </span>
             <hr />
         </div>

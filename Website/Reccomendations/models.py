@@ -32,3 +32,12 @@ class SpotifyPlaylistData(models.Model):
 
     def __str__(self):
         return self.playlist_name
+
+class IMDBMovieData(models.Model):
+    googleId = models.CharField(max_length=50)
+    title = models.CharField(max_length=120)
+    description = models.CharField(max_length=120)
+    image =  models.CharField(max_length=255)
+
+    def __str__(self):
+        return self.title

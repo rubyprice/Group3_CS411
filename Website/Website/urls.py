@@ -25,6 +25,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     re_path('api/UserData', views.UserDataAPI),
     re_path('api/SpotifyPlaylists', views.spotify_playlistData),
+    re_path('api/IMDBMovies', views.imdb_movieData),
     re_path('api/GoogleUserData', views.GoogleUserDataAPI),
     #re_path('auth/', include('djoser.social.urls')),
     #path('api/', include(router.urls))

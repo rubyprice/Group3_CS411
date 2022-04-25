@@ -2,8 +2,8 @@ import imp
 from traceback import print_tb
 from django.shortcuts import render
 from rest_framework import viewsets
-from .serializers import UserDataSerializer, GoogleUserDataSerializer, SpotifyPlaylistDataSerializer
-from .models import SpotifyPlaylistData, UserData, GoogleUserData
+from .serializers import UserDataSerializer, GoogleUserDataSerializer, SpotifyPlaylistDataSerializer, IMDBMovieDataSerializer
+from .models import SpotifyPlaylistData, UserData, GoogleUserData, IMDBMovieData
 
 from django.views.decorators.csrf import csrf_exempt
 from rest_framework.parsers import JSONParser
@@ -28,7 +28,6 @@ def GoogleUserDataAPI(request, id=0):
         print(x)
         print(dir(x))
 
-        input()
         info = request.read().decode("utf-8")
         data = json.loads(info)
         print(data)
@@ -51,8 +50,16 @@ def spotify_playlistData(request, id=0):
         print('GET spotify_playlistData')
         playlist_data = SpotifyPlaylistData.objects.all()
         playlist_serializer = SpotifyPlaylistDataSerializer(playlist_data, many=True)
-        #print(playlist_serializer.data)
         return JsonResponse(playlist_serializer.data, safe=False)
+
+
+@csrf_exempt
+def imdb_movieData(request, id=0):
+    if request.method == 'GET':
+        print('GET imdb_movieData')
+        movie_data = IMDBMovieData.objects.all()
+        movie_datat_serializer = IMDBMovieDataSerializer(movie_data, many=True)
+        return JsonResponse(movie_datat_serializer.data, safe=False)
 
 
 @csrf_exempt
@@ -62,7 +69,6 @@ def UserDataAPI(request, id=0):
         print('GET')
         weather = UserData.objects.all()
         weather_serializer = UserDataSerializer(weather, many=True)
-        #print(weather_serializer.data)
         return JsonResponse(weather_serializer.data, safe=False)
 
     elif request.method == 'POST':
@@ -94,7 +100,6 @@ def UserDataAPI(request, id=0):
             weather_serializer.save()
             weather = UserData.objects.all()
             weather_serializer = UserDataSerializer(weather, many=True)
-            #print(request.path_info)
             #return HttpResponseRedirect('http://localhost:3000/DataEntry')
 
         
@@ -103,11 +108,10 @@ def UserDataAPI(request, id=0):
         URL = "https://api.spotify.com/v1/search?q=" + weather_condition.replace(' ', '%20') + "&type=playlist&offset=0&limit=5"
         payload={}
         headers = {
-        'Authorization': 'Bearer BQBeaYqNASsbN-A4CE962hMW7Y9PGILa0LgMhaNdmOPni1w3oEm1KFJwsfwCE0OAY5SpAe-uN6aUIe7VRphRLoAei77sgpPEXDNXgODPLM9WgUUTKDkw-OPH4ZP0CI-6XQbOI2YUWpau_sCdJd0LjheEjAomkH8'
+        'Authorization': 'Bearer BQBypxhh_JKv0F7_G9NmIYdctZYzeSeH667khbqPTxKYtLDI_lPRkuhAXmKQJSjXnJNTmP95_9dwpIHUdCC-PY7RFum9bpJDaDsr2_kMClS0PqwsKeKEdyFbI3ZQs0eat4SdnSg3jO-aN7DZrfOZsSunNKWIh8k'
         }
 
         response = requests.request("GET", URL, headers=headers, data=payload)
-        #input(response.json())
         for obj in response.json()['playlists']['items']:
             data = {}
             data['external_url_spotify'] = obj['external_urls']['spotify']
@@ -119,8 +123,39 @@ def UserDataAPI(request, id=0):
                 valid = True
                 spotify_serializer.save()
                 playlists = SpotifyPlaylistData.objects.all()
-                weather_serializer = SpotifyPlaylistDataSerializer(playlists, many=True)
-                #print(request.path_info)
+                spotify_serializer = SpotifyPlaylistDataSerializer(playlists, many=True)
+
+        URL = "https://imdb-api.com/en/API/SearchMovie/k_l7zjv875/" + weather_condition.replace(' ', '%20')
+        response = requests.get(URL)
+
+        jsonPFile = response.json()
+        #print(jsonPFile['results'])
+
+        for movie in jsonPFile['results']:
+            data = {}
+
+            data['googleId'] = googleID
+            data['title'] = movie['title']
+            data['description'] = movie['description']
+            data['image'] = movie['image']
+            # print(data['googlId'])
+            # print(data['title'])
+            # print(data['description'])
+            # print(data['image'])
+
+
+            imdb_serializer = IMDBMovieDataSerializer(data=data)
+            #print(data)
+            #print(imdb_serializer.is_valid())
+            if imdb_serializer.is_valid():
+                #print('IMDBMovieDataSerializer is valid')
+                valid = True
+                imdb_serializer.save()
+                movies = IMDBMovieData.objects.all()
+                imdb_serializer = IMDBMovieDataSerializer(movies, many=True) 
+        
+        
+
         
         if valid:
             return HttpResponseRedirect('http://localhost:3000/DataEntry')

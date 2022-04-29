@@ -1,1 +1,3 @@
-We plan to create a web app that gives movie recommendations based on the weather conditions at a certain location. The two APIs that we will be using with be the IMDb API and a weather API. For our third party authentication, we plan to use Twitter. For the database we will store previous weather conditions that were returned as well as previous movies that were recommended.
+We plan to create a web app that gives movie and playlist recommendations based on the weather conditions at a certain location. The APIs that we will 
+be using are the IMDb API, Spotify API and a weather API. For our third party authentication, we plan to use Google. For the database we will store 
+previous weather conditions that were returned as well as previous movies and playlists that were recommended.

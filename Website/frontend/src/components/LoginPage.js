@@ -5,6 +5,7 @@ import axios from "axios";
 axios.defaults.xsrfHeaderName = "X-CSRFTOKEN";
 axios.defaults.xsrfCookieName = "csrftoken";
 
+const configFile = require('./../configsrc.json')
 
 export default class LoginPage extends Component {
     constructor(props){
@@ -47,7 +48,7 @@ export default class LoginPage extends Component {
                 
                 <div className="form-group">
                     <GoogleLogin
-                        clientId="465862241196-2pnjgo8q0lub0hmva6i0464v1q9bj13i.apps.googleusercontent.com"
+                        clientId={configFile.googleClientId}
                         buttonText="Log in with Google"
                         onSuccess={this.onSuccess}
                         onFailure={this.onFailrue}

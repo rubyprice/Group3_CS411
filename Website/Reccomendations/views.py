@@ -84,7 +84,10 @@ def UserDataAPI(request, id=0):
         zipcode = attribute_list[2].split('=')[1]
         data['zipcode'] = zipcode
         
-        URL = "http://api.weatherapi.com/v1/current.json?q="+zipcode+"&key=22268e73aa5e421e9e4191953220604"
+        f = open('config.json')
+        configdata = json.load(f)
+
+        URL = "http://api.weatherapi.com/v1/current.json?q="+zipcode+"&key=" + configdata["weatherAPIKey"]
         response = requests.get(url = URL)
         jsonFile = response.json()
         #print(jsonFile)
@@ -108,7 +111,7 @@ def UserDataAPI(request, id=0):
         URL = "https://api.spotify.com/v1/search?q=" + weather_condition.replace(' ', '%20') + "&type=playlist&offset=0&limit=5"
         payload={}
         headers = {
-        'Authorization': 'Bearer BQBypxhh_JKv0F7_G9NmIYdctZYzeSeH667khbqPTxKYtLDI_lPRkuhAXmKQJSjXnJNTmP95_9dwpIHUdCC-PY7RFum9bpJDaDsr2_kMClS0PqwsKeKEdyFbI3ZQs0eat4SdnSg3jO-aN7DZrfOZsSunNKWIh8k'
+        'Authorization': configdata["SpotifyToken"]
         }
 
         response = requests.request("GET", URL, headers=headers, data=payload)
@@ -125,7 +128,7 @@ def UserDataAPI(request, id=0):
                 playlists = SpotifyPlaylistData.objects.all()
                 spotify_serializer = SpotifyPlaylistDataSerializer(playlists, many=True)
 
-        URL = "https://imdb-api.com/en/API/SearchMovie/k_l7zjv875/" + weather_condition.replace(' ', '%20')
+        URL = "https://imdb-api.com/en/API/SearchMovie/"+ configdata["imdbKey"] + "/" + weather_condition.replace(' ', '%20')
         response = requests.get(URL)
 
         jsonPFile = response.json()

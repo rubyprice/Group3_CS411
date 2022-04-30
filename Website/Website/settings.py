@@ -12,16 +12,20 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 from pathlib import Path
 from telnetlib import AUTHENTICATION
+import json
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+f = open('config.json')
+
+data = json.load(f)
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-0ddu*+z&p@-8dl=d0m=9ht)2rimr+6a0q(8h8(wktqg=rs0@*^'
+SECRET_KEY = data["secret_key"]
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -142,11 +146,3 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 CORS_ORIGIN_WHITELIST = [
      'http://localhost:3000'
 ]
-
-# SOCIAL_AUTH_GOOGLE_OATH2_KEY = '465862241196-2pnjgo8q0lub0hmva6i0464v1q9bj13i.apps.googleusercontent.com'
-# SOCIAL_AUTH_GOOGLE_OATH2_SECRET = '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'
-# SOCIAL_AUTH_GOOGLE_OATH2_SCOPE = ['https://www.googleapis.com/auth/userinfo.email',
-#                                     'https://www.googleapis.com/auth/userinfo.profile',
-#                                     'openid']
-
-# SOCIAL_AUTH_GOOGLE_OATH2_EXTRA_DATA =['first_name', 'last_name']

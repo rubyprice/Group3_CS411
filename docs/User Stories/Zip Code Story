@@ -1,0 +1,13 @@
+As a logged-in user, I want to be able to enter a zip code to get movie and Spotify playlist recommendations based on the weather conditions at the entered 
+zip code.
+
+To get to this point, the User Login-Logout Story must have been successful. At this point, the logged-in user should be at a page where they are able to 
+enter a zip code to get movie and Spotify playlist recommendations based on the weather conditions at the zip code. The app will take the zip code and get 
+the weather condition at the zip code at the current time. If the zip code that is given is valid and a weather condition is successfully given, then the 
+app should follow through with the Movie Recommendation Story and Spotify Playlist Recommendation Story.
+
+Here are some exceptions to the happy path. One exception is that the user gives an invalid zip code. In this case, a message of some sort should be given 
+to notify the user that an invalid zip code has been entered. Another exception is that the app is unable to retrieve the weather condition successfully. 
+In this case, a message of some sort should be given to notify the user that the app was not able to get the weather condition at the given zip code. 
+Another exception is that the user might want to try more than one zip code. In this case, we will allow the user to enter zip codes as many times as they 
+wish so after getting recommendations for one zip code they can enter a different zip code to get more recommendations.

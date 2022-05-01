@@ -19,10 +19,26 @@ Each member of our team had their own strengths to bring to this project, which 
  connecting frontend and backend, coding, etc
 -Be one of the few groups where all members were present at 8:00 a.m. labs to present our progress to Dev
 
-Project Changes:
-One challenge we faced during the development process was changing our project idea, after our first idea was too complex for the skills of our team. As 
-specified in our proposal documents, our original idea was to use the Watson API to analyze a user’s Twitter feed and recommend a movie based on the 
-sentiment of their feed. However, after looking into the Watson API, we believed we would have more success switching to using a Weather API to generate 
-recommendations from Spotify and IMDB. After consulting with Dev, our new project proposal was approved, and we worked to update our user stories, proposal, and project trajectory.
+Project Change:
+One challenge we faced during the development process was changing our project idea. As specified in our original proposal document, our original idea was 
+to use the Watson API to analyze a user’s Twitter feed and recommend a movie based on the sentiment of their feed. However, after looking into the Watson 
+API, we believed we would have more success switching to using a Weather API to generate recommendations from Spotify and IMDb. After consulting with Dev, 
+our new project proposal was approved, and we worked to update our user stories, proposal, and project trajectory.
 
-Day 2 Things:
+Significant Challenges (and how we solved them):
+The three significant challenges that our team ran into was connecting the frontend and backend (essentially creating the skeleton code), transferring the 
+data from the backend to the frontend and vice versa, and getting OAuth to work. To overcome these challenges, we essentially used the same process each 
+time. First, we acknowledge the issue. Second, we all get the current working code from this repo. Third, we all concurrently attempt to figure out how to 
+solve the issue. Each time one of us thinks we have discovered something useful, whether it be a block of code or a resource to look at, we post it on 
+slack and alert the rest of the team. Through this process, we were eventually able to overcome all of the three significant challenges.
+
+Potential Day 2 Features:
+- (More Recommendations Button) : A button that when clicked gives more recommendations based on the weather at a zip code
+- (Rating System) : A system where users can rate recommended playlists and movies
+- (Watched/Listen To System) : A system where users can indicate which of the recommendations they watched/listened to
+- (More CSS) : Make the website appear even prettier and more welcoming
+- (User Interactions System) : A system where users can share the recommendations they got with other users
+- (Details Button) : A button that when clicked allows the user to get more details on a specific playlist or movie they were recommended
+- (More Methods Of OAuth) : Allow the user to use an OAuth other than Google (i.e. Twitter OAuth)
+- (More Recommendation Types System) : Allow the user to get recommendations of other things (i.e. food)
+- (Review System) : Allow users to leave public reviews of recommended playlists and movies

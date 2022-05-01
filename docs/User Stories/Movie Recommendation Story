@@ -1,4 +1,4 @@
-As a logged-in user, I want to see movie recommendations based on the weather conditions at the zip code I entered.
+As a logged-in user, I want to see movie recommendations based on the weather conditions at the zip code I entered to be able to find a movie to watch.
 
 To get to this point, the User Login-Logout Story and the Zip Code Story must have been successful. At this point, weather data associated with the entered 
 zip code will be pulled and our app will return movies associated with the specific weather condition. The movies will be displayed in a list with the 

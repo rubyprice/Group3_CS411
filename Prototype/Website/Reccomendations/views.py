@@ -11,6 +11,7 @@ from django.http import HttpResponseRedirect
 from django.http.response import JsonResponse
 
 import requests
+import json
 
 # Create your views here.
 
@@ -39,8 +40,10 @@ def UserDataAPI(request, id=0):
         zipcode = attribute_list[1].split('=')[1]
         data['zipcode'] = zipcode
         
+        f = open('config.json')
+        configdata = json.load(f)
 
-        URL = "http://api.weatherapi.com/v1/current.json?q="+zipcode+"&key=22268e73aa5e421e9e4191953220604"
+        URL = "http://api.weatherapi.com/v1/current.json?q="+zipcode+"&key=" + configdata["weatherAPIKey"]
         response = requests.get(url = URL)
         jsonFile = response.json()
         #print(jsonFile)

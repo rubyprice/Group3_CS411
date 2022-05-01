@@ -1,3 +1,4 @@
+User Login-Logout Story
 Story: As a user, I want to use login and logout authorization to protect my data.
 
 Details: When first entering our application, the user will enter their Google log-in information on our homepage to serve as our user-identification. 

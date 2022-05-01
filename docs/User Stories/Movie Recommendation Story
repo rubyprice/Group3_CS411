@@ -1,0 +1,13 @@
+As a logged-in user, I want to see movie recommendations based on the weather conditions at the zip code I entered.
+
+To get to this point, the User Login-Logout Story and the Zip Code Story must have been successful. At this point, weather data associated with the entered 
+zip code will be pulled and our app will return movies associated with the specific weather condition. The movies will be displayed in a list with the 
+titles and images associated with each movie. For example, a user who entered a zip code that has a weather condition of snow will get a list of movies 
+associated with snow. This will allow the user to find movies with themes that match the environment at the zip code they entered and have a better movie 
+watching experience.
+
+Here are some exceptions to the happy path. One exception is that there are no movies associated with the specific weather condition. In this case, the 
+movie list will simply be empty and an empty list will essentially notify the user that there are no movies associated with the specific weather condition. 
+Another exception is that there is no image associated with a movie. In this case, there will be a default “image not found” to notify the user that an 
+image wasn’t found for the movie. Another exception is that the user doesn’t like any of the movie recommendations. In this case, the user can simply enter 
+a different zip code as mentioned in Zip Code Story and possibly get different movie recommendations that they like.

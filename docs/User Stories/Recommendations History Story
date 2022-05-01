@@ -1,0 +1,14 @@
+As a logged-in user, I want to be able to see movies and Spotify playlists that I was previously recommended in order to keep track of all the movies and 
+playlists that have been recommended so far.
+
+To get to this point, the User Login-Logout Story, Zip Code Story, Spotify Playlist Recommendation Story, and Movie Recommendation Story must have been 
+successful. At this point, the user should be able to see all the previous movie and playlist recommendations that were given. The most recent 
+recommendations will be near the bottom of the list, whereas the oldest recommendations will be near the top of the list. The previous movie 
+recommendations will be displayed in the same list and format with the current movie recommendations mentioned in Movie Recommendation Story. The previous 
+playlist recommendations will be displayed in the same list and format with the current playlist recommendations mentioned in Spotify Playlist 
+Recommendation Story. This will allow users to keep track of all the movies and playlists that have been recommended to them so far. This way if they ever 
+want to relisten to a previously recommended playlist or rewatch a previously recommended movie, then they’ll be able to find it again.
+
+Here are some exceptions to the happy path. One exception is that the user doesn’t care about past recommendations. In this case, the user can simply 
+scroll quickly to the bottom of the list and see the current recommendations. Another exception is that the user doesn’t have any previous recommendations. 
+In this case, the list for the movie recommendations and the list for the playlist recommendations will only contain the current recommendations. 

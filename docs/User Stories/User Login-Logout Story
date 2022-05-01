@@ -5,9 +5,9 @@ Details: When first entering our application, the user will enter their Google l
 application will use Google’s OAuth system to verify each individual user who wants to use the application. If their username and password correspond to an 
 existing Google account, then they will be taken to their own personal movie and Spotify playlist recommendation page within our application. If they are 
 not verified, then we will give the user a notification that authentication was not successful. We want to have a reliable system of authentication, since 
-we will be giving recommendations based on zipcode, which the user may want to keep private. Ideally, this login process will make it so each user will 
-only be able to see their own recommendations, and won’t have access to anyone else’s. When a user is done viewing their recommendations, they should log 
-out of their Google account to end their session and close the browser.
+we will be giving recommendations based on weather conditions at entered zip codes, which the user may want to keep private. Ideally, this login process 
+will make it so each user will only be able to see their own recommendations, and won’t have access to anyone else’s. When a user is done viewing their 
+recommendations, they should log out of their Google account to end their session and close the browser.
 
 While this is the ideal scenario for our application, there are many possible exceptions to the “happy path” we must consider. The first case is if the 
 user does not want to make a Google account. Since we will offer the option to sign in with their existing account or make a new one, we may run into a 

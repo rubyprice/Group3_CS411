@@ -7,20 +7,22 @@ development process.
 
 Planning:
 To facilitate communication among group members and to more easily plan meetings, our team took these steps:
--Created a slack for all project-related documents, code, and information
+-Created a slack for all project-related documents, code, and information (i.e. documents, blocks of code, useful resources to read through)
 -Filled out a shared Google Calendar with all our availabilities
 -Created a group chat for quick communication
--Met frequently on zoom to check in on project updates
+-Met frequently on zoom in addition to meeting at labs to check in on project updates
 
 Development:
 Each member of our team had their own strengths to bring to this project, which ensured that work was evenly distributed. An example of such processes was:
 -Having each team member complete one user story to evenly distribute the work
--Split up tasks such as: submitting assignments, project management, updating github, coding, etc
--Had our whole group attend labs to present our progress
+-Split up tasks such as: submitting assignments, project management, updating github, writing documents, API calls, OAuth, frontend, database, backend, 
+ connecting frontend and backend, coding, etc
+-Be one of the few groups where all members were present at 8:00 a.m. labs to present our progress to Dev
 
 Project Changes:
 One challenge we faced during the development process was changing our project idea, after our first idea was too complex for the skills of our team. As 
 specified in our proposal documents, our original idea was to use the Watson API to analyze a user’s Twitter feed and recommend a movie based on the 
 sentiment of their feed. However, after looking into the Watson API, we believed we would have more success switching to using a Weather API to generate 
-recommendations from Spotify and IMDB. After consulting with Dev, our new project proposal was approved, and we worked to update our user stories, proposal,
-and project trajectory.
+recommendations from Spotify and IMDB. After consulting with Dev, our new project proposal was approved, and we worked to update our user stories, proposal, and project trajectory.
+
+Day 2 Things:
